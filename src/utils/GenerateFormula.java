@@ -194,6 +194,7 @@ public class GenerateFormula {
 	}
 
 	public static String generateMediumFormula() {
+		nMax=2;
 		n = 0;
 		String str = "", result = "";
 		int i;
@@ -224,6 +225,7 @@ public class GenerateFormula {
 		for (int in = 0; !infix[in].equals("#"); in++) {
 			result = result + infix[in];
 		}
+		nMax=3;
 		return result;
 	}
 

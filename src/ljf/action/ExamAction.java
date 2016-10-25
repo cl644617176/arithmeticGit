@@ -104,6 +104,10 @@ ServletRequestAware, ServletResponseAware  {
 			grade.setSnumber((String)session.get("number"));
 			grade.setGstarttime(new Date());
 			grade.setGlevel(flag);
+			grade.setGscore(0);
+			grade.setGduration(10*60);
+			grade.setGendtime(new Date(grade.getGstarttime().getTime()+10*60));
+			grade.setGother("10分0秒");
 			HIsession = HibernateSessionFactory.getSession();// 获得session
 			HIsession.beginTransaction();// 开启事务 
 			HIsession.save(grade);

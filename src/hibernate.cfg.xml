@@ -26,7 +26,7 @@
 			jdbc:mysql://localhost:3306/arithmetic
 		</property>
 		<property name="connection.username">root</property>
-		<property name="connection.password">root</property>
+		<property name="connection.password">111111</property>
 		<property name="connection.driver_class">
 			com.mysql.jdbc.Driver
 		</property>

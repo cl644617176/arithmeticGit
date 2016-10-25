@@ -80,6 +80,7 @@ public class ExamServiceImpl extends BaseServiceImpl<Exam> implements
 			str=GenerateFormula.generatePrimaryFormula();
 			exam.setExam(FormatFormula(str));
 			exam.setTrueresult(HUAJIAN(str));
+			exam.setStudentanswer("-");
 			try {
 				HIsession = HibernateSessionFactory.getSession();// 获得session
 				HIsession.beginTransaction();// 开启事务
@@ -111,6 +112,7 @@ public class ExamServiceImpl extends BaseServiceImpl<Exam> implements
 			str=GenerateFormula.generateMediumFormula();
 			exam.setExam(FormatFormula(str));
 			exam.setTrueresult(HUAJIAN(str));
+			exam.setStudentanswer("-");
 			try {
 				HIsession = HibernateSessionFactory.getSession();// 获得session
 				HIsession.beginTransaction();// 开启事务
@@ -141,6 +143,7 @@ public class ExamServiceImpl extends BaseServiceImpl<Exam> implements
 			str=GenerateFormula.generateHigherFormula();
 			exam.setExam(FormatFormula(str));
 			exam.setTrueresult(HUAJIAN(str));
+			exam.setStudentanswer("-");
 			try {
 				HIsession = HibernateSessionFactory.getSession();// 获得session
 				HIsession.beginTransaction();// 开启事务
