@@ -177,6 +177,11 @@ public class UserAction extends ActionSupport implements ServletRequestAware,
 		writeStringToResponse(JsonTools.createJsonString(list).toString());
 
 	}
+	
+	public void logout(){
+		session.remove("role");
+		session.remove("number");
+	}
 
 	public String login() {
 		if (role.equals("student")) {

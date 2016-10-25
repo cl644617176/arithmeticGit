@@ -12,7 +12,7 @@
 			<interceptor name="loginInteceptor" class="ljf.interceptor.LoginInterceptor" />
 			<interceptor-stack name="loginStack">
 				<interceptor-ref name="loginInteceptor">
-					<param name="excludeMethods">loginCheck,register,judgeSNumber,getTeachers,goLogin,login</param>
+					<param name="excludeMethods">practiceExam,loginCheck,register,judgeSNumber,getTeachers,goLogin</param>
 				</interceptor-ref>
 				<interceptor-ref name="defaultStack"></interceptor-ref>
 			</interceptor-stack>
