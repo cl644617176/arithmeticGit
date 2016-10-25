@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+	<!-- 配置为开发模式，一旦文件改动，不需要重启，会立即生效 -->
+	<!-- <constant name="struts.devMode" value="true" /> -->
+
+	<package name="ljf" namespace="/" extends="struts-default">
+		<interceptors>
+			<interceptor name="loginInteceptor" class="ljf.interceptor.LoginInterceptor" />
+			<interceptor-stack name="loginStack">
+				<interceptor-ref name="loginInteceptor">
+					<param name="excludeMethods">loginCheck,register,judgeSNumber,getTeachers,goLogin,login</param>
+				</interceptor-ref>
+				<interceptor-ref name="defaultStack"></interceptor-ref>
+			</interceptor-stack>
+		</interceptors>
+
+		<default-interceptor-ref name="loginStack" />
+
+		<action name="*_*" class="ljf.action.{1}" method="{2}">
+			<result name="StuLoginSuccess">/home.jsp</result>
+			<result name="TeaLoginSuccess">/WEB-INF/teacher.jsp</result>
+			<result name="loginError">/login.jsp</result>
+			<result name="goExam">/WEB-INF/exam.jsp</result>
+			<result name="login">/login.jsp</result>
+			<result name="gradeRecord">/WEB-INF/graderecord.jsp</result>
+			<result name="tgradeRecord">/WEB-INF/tgraderecord.jsp</result>
+			<result name="gradeDetail">/WEB-INF/gradedetail.jsp</result>
+			<result name="tgradeDetail">/WEB-INF/tgradedetail.jsp</result>
+			<result name="rank">/WEB-INF/rank.jsp</result>
+			<result name="students">/WEB-INF/teacher.jsp</result>
+			<result name="goScore">/WEB-INF/score.jsp</result>
+			<result name="goIndex">/home.jsp</result>
+			<result name="goPerson">/WEB-INF/person.jsp</result>
+			<result name="personToUpdate">/WEB-INF/person_update.jsp</result>
+			<result name="inforTJ">/WEB-INF/person_tj.jsp</result>
+		</action>
+	</package>
+
+
+</struts>
